@@ -1,16 +1,14 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
+import requests
+import webbrowser
+import time
 
-search_text = input("What would you like to search for? ")
-driver = webdriver.Chrome()
-driver.get("https://www.google.com")
 
-search_box = WebDriverWait(driver, 10).until(
-    EC.visibility_of_element_located((By.NAME, "q"))
-)
-search_box.send_keys(search_text)
+time.sleep(2)
+from rich import print
+print("[green]Hello, Vinod![/green]")
 
-input("Text entered. Press Enter to close Chrome.")
-driver.quit()
+#requests.get("https://www.google.com")
+
+webbrowser.open("https://www.google.com")
+
+
